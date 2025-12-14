@@ -1,0 +1,156 @@
+.text-center {
+  text-align: center;
+}
+
+/* === CONTAINER FORM CHUNG === */
+.login-container,
+.recover-container,
+.register-container {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* === FORM ELEMENTS === */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* === CHECKBOX GROUP === */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* === BUTTON === */
+.btn-login,
+.btn-recover,
+.btn-register {
+  width: 100%;
+  padding: 12px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-login:hover,
+.btn-recover:hover,
+.btn-register:hover {
+  background: #333;
+}
+
+/* === ALERT === */
+.alert {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+}
+
+/* === SOCIAL LOGIN & LINK === */
+.social-login,
+.back-home,
+.back-link {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.social-login:hover,
+.back-home:hover,
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* === LINK GROUP === */
+.link-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.link-group a {
+  color: #007bff;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.link-group a:hover {
+  text-decoration: underline;
+}
+
+/* === GENDER GROUP (REGISTER PAGE) === */
+.gender-group {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.gender-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+}
+
+.note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .login-container,
+  .recover-container,
+  .register-container {
+    margin: 20px;
+    padding: 15px;
+  }
+}

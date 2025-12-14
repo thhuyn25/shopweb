@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+:root {
+  --primary-color: #333;
+  --highlight-color: #af041e;
+  --text-color: #666;
+  --bg-color: #fff;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --box-radius: 8px;
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}

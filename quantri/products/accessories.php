@@ -6,69 +6,77 @@ error_reporting(E_ALL);
 require('../includes/header.php');
 ?>
 
-<div class="container-fluid">
-    <h3 class="mb-4">Tất cả sản phẩm</h3>
+<div>
+    <div class="dashboard-header animate-fadeIn">
+        <h2 class="dashboard-title">Quản lý sản phẩm Accessories</h2>
+        <p class="dashboard-subtitle">Danh sách sản phẩm thuộc danh mục Accessories</p>
+    </div>
 
     <?php
-    // Bao gồm file dbhelper.php
     require_once('../../database/dbhelper.php');
-
-    // Tạo kết nối
     $conn = createConnection();
     if ($conn->connect_error) {
-        die("Kết nối thất bại: " . $conn->connect_error);
-    }
-
-    // Câu lệnh SQL
-    $sql_str = "SELECT * FROM products WHERE category_id = 4 ORDER BY name";
-
-    // Thực thi và lấy kết quả
-    $result = executeResult($conn, $sql_str);
-    if ($result === false) {
-        echo "Lỗi truy vấn: " . $conn->error;
+        echo '<div class="alert alert-danger alert-dismissible fade show animate-fadeIn" role="alert">';
+        echo 'Kết nối thất bại: ' . htmlspecialchars($conn->connect_error);
+        echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+        echo '</div>';
     } else {
-        if ($result && !empty($result)) {
+        $sql_str = "SELECT * FROM products WHERE category_id = 4 ORDER BY name";
+
+        $result = executeResult($conn, $sql_str);
+        if ($result === false) {
+            echo '<div class="alert alert-danger alert-dismissible fade show animate-fadeIn" role="alert">';
+            echo 'Lỗi truy vấn: ' . htmlspecialchars($conn->error);
+            echo '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+            echo '</div>';
+        } else {
             ?>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Danh sách sản phẩm Accessories</h6>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Mô tả</th>
-                                    <th>Hình ảnh</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                foreach ($result as $row) {
-                                    echo "<tr>";
-                                    echo "<td>" . htmlspecialchars($row['name']) . "</td>";
-                                    echo "<td>" . number_format($row['price'], 0, ',', '.') . " VNĐ</td>";
-                                    echo "<td>" . htmlspecialchars($row['description']) . "</td>";
-                                    $imagePath = '../../images/' . htmlspecialchars($row['image']);
-                                    echo "<td><img src='$imagePath' alt='" . htmlspecialchars($row['name']) . "' width='100' onerror='this.src=\"../../images/default.jpg\";'></td>";
-                                    echo "</tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+            <div class="dashboard-section animate-fadeIn">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">Danh sách sản phẩm Accessories</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Mô tả</th>
+                                        <th>Hình ảnh</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php if (empty($result)): ?>
+                                        <tr>
+                                            <td colspan="4" class="text-center py-5">
+                                                <i class="fas fa-gem fa-3x text-muted mb-3"></i>
+                                                <p class="text-muted fs-5">Không có sản phẩm nào</p>
+                                            </td>
+                                        </tr>
+                                    <?php else: ?>
+                                        <?php foreach ($result as $row): ?>
+                                            <tr>
+                                                <td><?php echo htmlspecialchars($row['name']); ?></td>
+                                                <td><?php echo number_format($row['price'], 0, ',', '.') . ' VNĐ'; ?></td>
+                                                <td><?php echo htmlspecialchars($row['description']); ?></td>
+                                                <td>
+                                                    <img src="../../images/<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>" width="100" onerror="this.src='../../images/default.jpg';">
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
             <?php
-        } else {
-            echo '<div class="alert alert-warning">Không có sản phẩm nào được tìm thấy.</div>';
         }
+        $conn->close();
     }
-
-    // Đóng kết nối
-    $conn->close();
     ?>
 </div>
 

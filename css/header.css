@@ -1,0 +1,168 @@
+#site-header, 
+#site-header * {
+    box-sizing: border-box !important;
+}
+
+/* --- HEADER GLOBAL --- */
+.main-header {
+    display: block !important;
+    width: 100% !important;
+    background-color: #fff !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* --- TOP BAR --- */
+.top-bar {
+    background-color: #333 !important;
+    color: white !important;
+    font-size: 12px !important;
+    padding: 5px 0 !important;
+    text-align: center !important;
+}
+
+/* --- HEADER MIDDLE --- */
+.header-middle {
+    padding: 20px 0 !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+/* Flex cho phần giữa */
+.flexContainer-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+}
+
+/* --- LOGO --- */
+.header-upper-logo img {
+    max-height: 40px !important;
+}
+
+/* --- SEARCH FORM --- */
+.header-upper-search-top {
+    flex: 1 !important;
+    margin: 0 30px !important;
+}
+
+.searchform {
+    display: flex !important;
+    align-items: center !important;
+    border: 1.5px solid #ccc !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    background-color: white !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+}
+
+.wpo-search-inner {
+    flex: 1 !important;
+}
+
+.searchinput {
+    width: 100% !important;
+    padding: 10px 15px !important;
+    border: none !important;
+    font-size: 16px !important;
+    outline: none !important;
+    font-family: 'Quicksand', sans-serif !important
+}
+
+.btn-search {
+    background-color: #333333 !important; 
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: pointer !important;
+}
+
+.search-icon-img {
+    width: 60% !important;  
+    height: 60% !important;
+    object-fit: contain !important;
+}
+
+
+
+/* --- CART & ACCOUNT --- */
+.header-upper-icon, .wrapper-account {
+    display: flex !important;
+    align-items: center !important;
+    margin-left: auto !important;
+}
+
+.wrapper-cart {
+    position: relative !important;
+    margin-right: 30px !important;
+}
+
+.cart-icon-img, .account-icon-img {
+    width: 30px !important;
+    height:30px !important;
+    object-fit: contain !important;
+}
+
+.cart-count {
+    position: absolute !important;
+    top: -8px !important;
+    right: -8px !important;
+    background: #222 !important;
+    color: white !important;
+    border-radius: 50% !important;
+    padding: 2px 6px !important;
+    font-size: 12px !important;
+    font-weight: bold !important;
+}
+
+/* --- ACCOUNT BUTTON --- */
+.header-action-toggle {
+    display: flex !important;
+    align-items: center !important;
+    padding: 5px 10px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    color: #000 !important;
+    transition: background-color 0.3s !important;
+}
+
+.header-action-toggle:hover {
+    background-color: #f5f5f5 !important;
+}
+
+.icon-box-text {
+    margin-left: 10px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    line-height: 40px !important;
+}
+
+/* --- DESKTOP MENU --- */
+.desktop-menu .menu-list {
+    list-style: none !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    padding: 15px 0 !important;
+    margin: 0 !important;
+}
+
+.desktop-menu .menu-list li a {
+    text-decoration: none !important;
+    color: #333 !important;
+    font-size: 16px !important;
+}
+
+.desktop-menu .menu-list li a:hover {
+    color: #e74c3c !important;
+}
+.menu-mobile-content{
+    display: none;
+}
+.free-ship{
+    margin-bottom: 0px !important;
+    margin-top: 0%!important;
+}

@@ -1,8 +1,7 @@
+<?php
+header('Content-Type: application/javascript');
+?>
 <script>
-
-
-
-// Helper function to format numbers
 function number_format(number, decimals, dec_point, thousands_sep) {
     number = (number + '').replace(',', '').replace(' ', '');
     var n = !isFinite(+number) ? 0 : +number,

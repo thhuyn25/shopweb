@@ -1,7 +1,7 @@
 <?php require('includes/header.php'); ?>
 
 <div class="container-fluid">
-    <h3 class="mb-4">Thêm sản phẩm</h3>
+
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5">
@@ -70,7 +70,6 @@
 
     </div>
 </div>
-
 <?php
 require('includes/footer.php');
 ?>

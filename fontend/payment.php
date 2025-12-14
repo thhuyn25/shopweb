@@ -1,22 +1,44 @@
-<?php include 'includes/db.php'; ?>
+<?php
+include '../database/dbhelper.php';
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <title>Phương thức thanh toán</title>
+    <title>Chính sách thanh toán - Streetwear Shop</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/shopweb/css/infor-page.css">
+    <link rel="stylesheet" href="/shopweb/css/header.css">
+    <link rel="stylesheet" href="/shopweb/css/footer.css">
 </head>
 <body>
-    <?php include 'includes/header.php'; ?>
-    <section class="container my-5">
-        <h1 class="text-center mb-4">Phương thức thanh toán (Cập nhật: 14:35, 21/05/2025)</h1>
-        <ul class="list-group">
-            <li class="list-group-item">1. Mua trực tiếp tại cửa hàng: Thanh toán bằng tiền mặt hoặc thẻ.</li>
-            <li class="list-group-item">2. Mua online: Thanh toán khi nhận hàng (COD).</li>
-            <li class="list-group-item">3. Thanh toán trực tuyến: Chuyển khoản qua ngân hàng hoặc ví điện tử (MoMo, ZaloPay).</li>
-        </ul>
-    </section>
-    <?php include 'includes/footer.php'; ?>
+    <?php include 'header.php'; ?>
+
+    <main>
+        <section class="container my-5">
+            <h1 class="text-center mb-4">Phương thức thanh toán</h1>
+            <div class="shipping-content">
+                <p class="text-center"><strong>S T R E E T W E A R E A Z Y</strong></p>
+                <p>Với tiêu chí không ngừng nỗ lực để trải nghiệm mua hàng của Quý khách diễn ra thuận tiện hơn, SWE hiện hỗ trợ 2 hình thức thanh toán tại tất cả các hệ thống cửa hàng và website online <a href="http://www.swe.vn">www.swe.vn</a> sau:</p>
+                <ol>
+                    <li>
+                        <h2>Mua trực tiếp tại cửa hàng</h2>
+                        <ul>
+                            <li>Thanh toán bằng tiền mặt</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h2>Mua hàng trên mạng</h2>
+                        <ul>
+                            <li>Thanh toán bằng tiền mặt qua ship COD</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <?php include 'footer.php'; ?>
 </body>
 </html>

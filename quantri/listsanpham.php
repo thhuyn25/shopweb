@@ -1,22 +1,9 @@
 <?php require('includes/header.php'); ?>
-
-<div class="container-fluid">
-    <h3 class="mb-4">Tất cả sản phẩm</h3>
-
     <?php
-    // Bao gồm file dbhelper.php
     require_once('../database/dbhelper.php');
-
-    // Tạo kết nối
     $conn = createConnection();
-
-    // Câu lệnh SQL
     $sql_str = "SELECT * FROM products ORDER BY id";
-
-    // Thực thi và lấy kết quả
     $result = executeResult($conn, $sql_str);
-
-    // Hiển thị danh sách sản phẩm trong bảng
     if ($result) {
         ?>
         <div class="card shadow mb-4">
@@ -61,8 +48,6 @@
     } else {
         echo '<div class="alert alert-warning">Không có sản phẩm nào được tìm thấy.</div>';
     }
-
-    // Đóng kết nối
     $conn->close();
     ?>
 </div>
@@ -71,14 +56,13 @@
 <style>
 
 .btn-warning {
-    background-color: #ffc107 !important; /* Màu vàng chuẩn của Bootstrap */
-    color: #212529 !important; /* Màu chữ tối để dễ đọc */
-    border-color: #ffc107 !important; /* Đường viền cùng màu */
+    background-color: #ffc107 !important; 
+    color: #212529 !important;
+    border-color: #ffc107 !important; 
 }
 
-/* Hiệu ứng hover cho nút Edit */
 .btn-warning:hover {
-    background-color: #e0a800 !important; /* Màu vàng đậm hơn khi hover */
+    background-color: #e0a800 !important;
     border-color: #e0a800 !important;
 }
 </style>

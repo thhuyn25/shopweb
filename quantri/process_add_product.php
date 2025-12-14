@@ -7,11 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $category_id = $_POST['category_id'];
     $image = '';
-
-    // Xử lý upload ảnh
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $target_dir = "../images/";
-        // Tạo thư mục nếu chưa tồn tại
         if (!file_exists($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
@@ -26,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Không có ảnh được tải lên.";
         exit();
     }
-
-    // Thêm sản phẩm vào cơ sở dữ liệu
     $conn = createConnection();
     $sql = "INSERT INTO products (name, price, description, image, category_id) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
@@ -35,8 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->close();
     $conn->close();
-
-    // Chuyển hướng về trang danh sách
     header("Location: listsanpham.php");
     exit();
 }

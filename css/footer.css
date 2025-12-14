@@ -1,0 +1,97 @@
+/* === FOOTER WRAPPER === */
+.site-footer {
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* === FOOTER GRID === */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 40% 22% 20% 18%;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* === FOOTER COLUMNS === */
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-column p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-column ul li a,
+.footer-column p a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover,
+.footer-column p a:hover {
+  color: #e74c3c;
+}
+
+/* === SOCIAL LINKS === */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-links a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #e74c3c;
+}
+
+/* === FOOTER BOTTOM === */
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  font-size: 13px;
+  color: #777;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+main a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main a:hover {
+  color: #e74c3c;
+}
